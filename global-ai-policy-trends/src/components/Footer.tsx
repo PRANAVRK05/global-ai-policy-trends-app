@@ -16,13 +16,16 @@ export default function Footer() {
           
           {/* Logo & Vision */}
           <div className="md:col-span-2 space-y-4">
-            <div className="flex items-center space-x-3">
-              <div className="p-1.5 bg-gradient-to-tr from-brand-primary to-brand-accent rounded-lg">
-                <Globe className="h-4 w-4 text-white" />
+            <div className="flex items-center gap-3">
+              <img src="/polaris_logo.svg" alt="Polaris logo" className="h-12 w-12 rounded-2xl bg-white/5 p-1 border border-white/10" />
+              <div>
+                <div className="font-display font-bold text-white text-lg tracking-tight">
+                  Polaris AI Policy Trends
+                </div>
+                <div className="text-xs uppercase tracking-[0.25em] text-brand-accent font-semibold mt-1">
+                  Unified governance intelligence
+                </div>
               </div>
-              <span className="font-display font-bold text-white text-lg tracking-tight">
-                Global AI Policy Trends
-              </span>
             </div>
             <p className="text-slate-400 text-sm max-w-sm leading-relaxed">
               An enterprise-grade, intelligence-driven framework specializing in analyzing, summarizing, forecasting, and compiling worldwide artificial intelligence governance. Designed for compliance, innovation, and ethical alignment.
