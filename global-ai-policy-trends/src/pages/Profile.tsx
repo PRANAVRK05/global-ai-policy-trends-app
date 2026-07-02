@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
-import { User, Activity, Key, Clock, ShieldCheck, Database, RefreshCw, Eye, EyeOff } from 'lucide-react';
+import { User as UserIcon, Activity, Key, Clock, ShieldCheck, Database, RefreshCw, Eye, EyeOff } from 'lucide-react';
 import GlassCard from '../components/GlassCard';
+import { useAuth } from '../context/AuthContext';
 
 export default function Profile() {
   const [apiKeyVisible, setApiKeyVisible] = useState(false);
   const [copied, setCopied] = useState(false);
+  const { user } = useAuth();
 
   const rawApiKey = 'sk_policy_live_839a2f1c304f5e7a9b08f';
 
@@ -31,7 +33,7 @@ export default function Profile() {
       {/* Title */}
       <div>
         <h1 className="text-3xl font-display font-bold text-white flex items-center gap-2">
-          <User className="h-7 w-7 text-brand-primary" /> Admin Profile & API Management
+          <UserIcon className="h-7 w-7 text-brand-primary" /> {user?.role === 'admin' ? 'Admin Profile' : 'User Profile'} & API Management
         </h1>
         <p className="text-slate-400 text-sm mt-1">
           Monitor your research compute quota, retrieve developer tokens, and view historic upload trails.
@@ -49,13 +51,13 @@ export default function Profile() {
             
             <div className="flex items-center gap-4">
               <div className="h-16 w-16 rounded-full bg-gradient-to-tr from-brand-primary to-brand-secondary text-white font-extrabold text-2xl flex items-center justify-center shadow-lg shadow-brand-primary/20 ring-4 ring-white/10 shrink-0">
-                FYP
+                {user?.username.charAt(0).toUpperCase()}
               </div>
               <div>
-                <h2 className="text-xl font-display font-bold text-white">FYP Research Administrator</h2>
-                <span className="text-xs text-slate-400 block mt-0.5">saipranavrk8605@gmail.com</span>
-                <span className="inline-block mt-2 px-2.5 py-0.5 rounded-full text-[9px] font-bold bg-brand-primary/10 border border-brand-primary/20 text-brand-accent">
-                  SUPER USER
+                <h2 className="text-xl font-display font-bold text-white">{user?.username}</h2>
+                <span className="text-xs text-slate-400 block mt-0.5">{user?.username}@example.com</span>
+                <span className={`inline-block mt-2 px-2.5 py-0.5 rounded-full text-[9px] font-bold border ${user?.role === 'admin' ? 'bg-brand-primary/10 border-brand-primary/20 text-brand-accent' : 'bg-emerald-500/10 border-emerald-500/20 text-emerald-400'}`}>
+                  {user?.role === 'admin' ? 'SUPER USER (ADMIN)' : 'STANDARD USER'}
                 </span>
               </div>
             </div>

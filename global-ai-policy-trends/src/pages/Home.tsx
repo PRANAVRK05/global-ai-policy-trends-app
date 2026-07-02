@@ -122,6 +122,18 @@ export default function Home() {
 
       {/* 1. HERO SECTION */}
       <section className="relative pt-20 pb-16 text-center max-w-5xl mx-auto px-4" id="hero-section">
+        <motion.div
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          className="mx-auto mb-8 inline-flex items-center justify-center gap-4 rounded-3xl bg-white/5 border border-white/10 px-4 py-3 shadow-xl shadow-black/10"
+        >
+          <img src="/polaris_logo.svg" alt="Polaris logo" className="h-12 w-12 rounded-2xl" />
+          <div className="text-left">
+            <p className="text-xs uppercase tracking-[0.35em] text-brand-accent font-semibold">Powered by Polaris</p>
+            <p className="text-sm text-slate-300 mt-1">AI governance insights for global policy teams</p>
+          </div>
+        </motion.div>
+
         {/* Animated Pill Tag */}
         <motion.div 
           initial={{ opacity: 0, y: -20 }}

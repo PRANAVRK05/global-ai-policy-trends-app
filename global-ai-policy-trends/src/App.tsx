@@ -65,9 +65,9 @@ function AnimatedRoutes() {
           <Route path="/documentation" element={<ProtectedRoute><Documentation /></ProtectedRoute>} />
           <Route path="/about" element={<ProtectedRoute><About /></ProtectedRoute>} />
           <Route path="/settings" element={<ProtectedRoute><Settings /></ProtectedRoute>} />
+          <Route path="/upload" element={<ProtectedRoute><UploadData /></ProtectedRoute>} />
           
           {/* Admin Routes */}
-          <Route path="/upload" element={<AdminRoute><UploadData /></AdminRoute>} />
           <Route path="/admin" element={<AdminRoute><AdminPanel /></AdminRoute>} />
         </Routes>
       </motion.div>

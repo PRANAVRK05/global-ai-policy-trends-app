@@ -105,12 +105,18 @@ export default function Navbar() {
           
           {/* Logo */}
           <Link to="/" onClick={closeDropdowns} className="flex items-center space-x-3 group" id="nav-logo">
-            <div className="relative p-2 bg-gradient-to-tr from-brand-primary to-brand-accent rounded-lg glow-blue transition-transform duration-300 group-hover:scale-110">
-              <Globe className="h-5 w-5 text-white" />
-              <div className="absolute inset-0 bg-white/20 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity" />
+            <div className="relative p-2 bg-white/5 rounded-2xl border border-white/10 shadow-lg shadow-black/20 transition-transform duration-300 group-hover:scale-105">
+              <img
+                src="/polaris_logo.svg"
+                alt="Polaris logo"
+                className="h-10 w-10 rounded-xl"
+              />
             </div>
-            <span className="font-display font-bold tracking-tight text-white text-lg sm:text-xl flex items-center gap-1.5">
-              Global AI Policy <span className="text-brand-accent font-sans font-medium text-xs bg-brand-primary/10 px-2 py-0.5 rounded-full border border-brand-primary/20">FYP</span>
+            <span className="font-display font-bold tracking-tight text-white text-lg sm:text-xl flex flex-col leading-tight">
+              <span>Polaris</span>
+              <span className="text-brand-accent font-sans font-medium text-xs uppercase tracking-[0.24em] bg-brand-primary/10 px-2 py-0.5 rounded-full border border-brand-primary/20 mt-1">
+                AI Policy Trends
+              </span>
             </span>
           </Link>
 
