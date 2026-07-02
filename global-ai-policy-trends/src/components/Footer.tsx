@@ -17,7 +17,7 @@ export default function Footer() {
           {/* Logo & Vision */}
           <div className="md:col-span-2 space-y-4">
             <div className="flex items-center gap-3">
-              <img src="/POLARIS AI.png" alt="Polaris logo" className="h-12 w-12 rounded-2xl bg-white/5 p-1 border border-white/10" />
+              <img src="/polaris-logo.png" alt="Polaris logo" className="h-12 w-12 rounded-2xl bg-white/5 p-1 border border-white/10 object-contain" />
               <div>
                 <div className="font-display font-bold text-white text-lg tracking-tight">
                   Polaris AI Policy Trends

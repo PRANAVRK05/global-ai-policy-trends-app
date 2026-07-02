@@ -53,10 +53,10 @@ export default function Login() {
           <div className="absolute top-0 right-0 w-32 h-32 bg-brand-primary/20 blur-[50px] -z-10" />
           
           <div className="text-center mb-8">
-            <div className="mx-auto w-12 h-12 bg-white/5 rounded-xl border border-white/10 flex items-center justify-center mb-4">
-              <ShieldCheck className="w-6 h-6 text-brand-accent" />
+            <div className="mx-auto w-16 h-16 bg-white/5 rounded-2xl border border-white/10 flex items-center justify-center mb-4 overflow-hidden p-2">
+              <img src="/polaris-logo.png" alt="Polaris AI" className="w-full h-full object-contain" />
             </div>
-            <h2 className="text-2xl font-display font-bold text-white mb-2">Welcome Back</h2>
+            <h2 className="text-2xl font-display font-bold text-white mb-2">Welcome to Polaris</h2>
             <p className="text-slate-400 text-sm">Sign in to access your AI Policy Dashboard</p>
           </div>
 

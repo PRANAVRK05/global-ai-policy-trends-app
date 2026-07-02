@@ -107,7 +107,7 @@ export default function Navbar() {
           <Link to="/" onClick={closeDropdowns} className="flex items-center space-x-3 group" id="nav-logo">
             <div className="relative p-2 bg-white/5 rounded-2xl border border-white/10 shadow-lg shadow-black/20 transition-transform duration-300 group-hover:scale-105">
               <img
-                src="/POLARIS AI.png"
+                src="/polaris-logo.png"
                 alt="Polaris logo"
                 className="h-10 w-10 rounded-xl"
               />

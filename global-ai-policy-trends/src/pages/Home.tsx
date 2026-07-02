@@ -127,9 +127,9 @@ export default function Home() {
           animate={{ opacity: 1, y: 0 }}
           className="mx-auto mb-8 inline-flex items-center justify-center gap-4 rounded-3xl bg-white/5 border border-white/10 px-4 py-3 shadow-xl shadow-black/10"
         >
-          <img src="/POLARIS AI.png" alt="Polaris logo" className="h-12 w-12 rounded-2xl" />
+          <img src="/polaris-logo.png" alt="Polaris logo" className="h-12 w-12 rounded-2xl object-contain bg-white/5 p-1" />
           <div className="text-left">
-            <p className="text-xs uppercase tracking-[0.35em] text-brand-accent font-semibold">Powered by Polaris</p>
+            <p className="text-xs uppercase tracking-[0.35em] text-brand-accent font-semibold">Powered by Polaris AI</p>
             <p className="text-sm text-slate-300 mt-1">AI governance insights for global policy teams</p>
           </div>
         </motion.div>
