@@ -19,7 +19,8 @@ import {
   X, 
   Sparkles,
   Settings,
-  ShieldCheck
+  ShieldCheck,
+  Activity
 } from 'lucide-react';
 
 export default function Navbar() {
@@ -318,7 +319,7 @@ export default function Navbar() {
                   }`}
                 >
                   <div className="h-6 w-6 rounded-full bg-gradient-to-tr from-brand-primary to-brand-secondary flex items-center justify-center text-white font-bold text-xs ring-1 ring-white/20">
-                    {user?.username.charAt(0).toUpperCase()}
+                    {user?.username?.charAt(0).toUpperCase()}
                   </div>
                   <span className="text-xs font-medium max-w-[80px] truncate">{user?.username}</span>
                   <ChevronDown className={`h-3 w-3 transition-transform ${isProfileDropdownOpen ? 'rotate-180' : ''}`} />

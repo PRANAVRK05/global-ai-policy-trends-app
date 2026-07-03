@@ -1,11 +1,13 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, useLocation, Link } from 'react-router-dom';
 import { AnimatePresence, motion } from 'motion/react';
 import { AuthProvider, useAuth } from './context/AuthContext';
 
 // Components
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
+import ErrorBoundary from './components/ErrorBoundary';
+import { ShieldAlert } from 'lucide-react';
 
 // Pages
 import Home from './pages/Home';
@@ -37,7 +39,23 @@ function ProtectedRoute({ children }: { children: React.ReactNode }) {
 function AdminRoute({ children }: { children: React.ReactNode }) {
   const { isAdmin, isLoading } = useAuth();
   if (isLoading) return null;
-  if (!isAdmin) return <div className="p-8 text-center text-red-400">Access Denied: Admins Only</div>;
+  if (!isAdmin) {
+    return (
+      <div className="flex flex-col items-center justify-center py-20 animate-fade-in">
+        <div className="p-4 bg-red-500/10 border border-red-500/20 rounded-2xl mb-4">
+          <ShieldAlert className="h-12 w-12 text-red-400" />
+        </div>
+        <h1 className="text-4xl font-display font-bold text-white mb-2">403</h1>
+        <h2 className="text-xl font-semibold text-slate-300 mb-6">Access Denied</h2>
+        <p className="text-slate-400 text-center max-w-md mb-8">
+          You do not have the required permissions to view this page. This area is restricted to system administrators.
+        </p>
+        <Link to="/" className="px-6 py-3 rounded-xl font-medium bg-brand-primary hover:bg-blue-600 text-white transition-all">
+          Return to Dashboard
+        </Link>
+      </div>
+    );
+  }
   return <>{children}</>;
 }
 
@@ -72,7 +90,7 @@ function AnimatedRoutes() {
           <Route path="/profile" element={<ProtectedRoute><Profile /></ProtectedRoute>} />
           <Route path="/documentation" element={<AdminRoute><Documentation /></AdminRoute>} />
           <Route path="/about" element={<ProtectedRoute><About /></ProtectedRoute>} />
-          <Route path="/settings" element={<ProtectedRoute><Settings /></ProtectedRoute>} />
+          <Route path="/settings" element={<AdminRoute><Settings /></AdminRoute>} />
           <Route path="/upload" element={<ProtectedRoute><UploadData /></ProtectedRoute>} />
           
           {/* Admin Routes */}
@@ -99,7 +117,9 @@ export default function App() {
 
         {/* Global Content Grid Area */}
         <main className="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-8 flex flex-col justify-between relative z-10" id="main-content">
-          <AnimatedRoutes />
+          <ErrorBoundary>
+            <AnimatedRoutes />
+          </ErrorBoundary>
         </main>
 
         {/* Dynamic Footer */}

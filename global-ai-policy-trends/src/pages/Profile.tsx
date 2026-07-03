@@ -59,7 +59,7 @@ function AdminProfile() {
           
           <div className="flex items-center gap-4">
             <div className="h-16 w-16 rounded-full bg-gradient-to-tr from-red-500 to-rose-600 text-white font-extrabold text-2xl flex items-center justify-center shadow-lg shadow-red-500/20 ring-4 ring-white/10 shrink-0">
-              {user?.username.charAt(0).toUpperCase()}
+              {user?.username?.charAt(0).toUpperCase()}
             </div>
             <div>
               <h2 className="text-xl font-display font-bold text-white">{user?.username}</h2>
@@ -190,7 +190,7 @@ function UserProfile() {
           
           <div className="flex flex-col sm:flex-row gap-6 items-start sm:items-center">
             <div className="h-24 w-24 rounded-full bg-gradient-to-tr from-brand-accent to-brand-primary text-[#020617] font-extrabold text-4xl flex items-center justify-center shadow-lg shadow-brand-primary/20 ring-4 ring-white/10 shrink-0">
-              {user?.username.charAt(0).toUpperCase()}
+              {user?.username?.charAt(0).toUpperCase()}
             </div>
             <div className="flex-1">
               <h2 className="text-2xl font-display font-bold text-white">{user?.username}</h2>

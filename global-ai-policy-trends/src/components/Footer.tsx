@@ -79,7 +79,7 @@ export default function Footer() {
         {/* Bottom Banner */}
         <div className="border-t border-white/5 mt-10 pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-400">
           <div>
-            &copy; {currentYear} Global AI Policy Trends. All rights reserved. Final Year Project.
+            &copy; {currentYear} Polaris AI. All rights reserved.
           </div>
 
           <motion.div 
