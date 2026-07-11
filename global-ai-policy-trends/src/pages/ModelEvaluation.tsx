@@ -1,10 +1,14 @@
 import React from 'react';
+import { useLocation } from 'react-router-dom';
 import { motion } from 'motion/react';
 import { ShieldCheck, BarChart3, Brain, Database, Cpu, Activity } from 'lucide-react';
 import GlassCard from '../components/GlassCard';
 
 export default function ModelEvaluation() {
-  const metrics = [
+  const location = useLocation();
+  const customMetrics = location.state?.customMetrics;
+  
+  const defaultMetrics = [
     { metric: 'Accuracy',        xgb: '90.0%',   rf: '90.0%' },
     { metric: 'Precision',       xgb: '85.2%',   rf: '86.4%' },
     { metric: 'Recall',          xgb: '92.9%',   rf: '91.1%' },
@@ -14,6 +18,8 @@ export default function ModelEvaluation() {
     { metric: 'Training Time',   xgb: '3.15 s',  rf: '2.90 s' },
     { metric: 'Prediction Time', xgb: '0.002 s', rf: '0.008 s' },
   ];
+
+  const metrics = customMetrics || defaultMetrics;
 
   const xgbFeatures = [
     { feature: "secretary", importance: "0.0261" },
